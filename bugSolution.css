@@ -1,0 +1,30 @@
+Several solutions can address this issue, depending on the desired layout behavior:
+
+**Solution 1: Use fixed pixel values:**
+Replace percentage values with fixed pixel values wherever possible to ensure consistent calculation and avoid dependency on the parent's width.
+
+```css
+.container {
+  width: 500px; /* Fixed width */
+}
+
+.element {
+  width: calc(500px + 10px); /* Now uses fixed pixel value */
+}
+```
+
+**Solution 2: Use viewport units (vw):**
+Use viewport units (vw, vh) to make the element's width relative to the viewport's size. This eliminates the dependency on the parent's percentage-based width.
+
+```css
+.container {
+  width: 50vw;
+}
+
+.element {
+  width: calc(50vw + 10px);
+}
+```
+
+**Solution 3: Refactor Layout:**
+Consider restructuring the layout to avoid the need for nested percentage calculations. Use flexbox or grid for better control and predictability over element sizing.
