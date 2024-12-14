@@ -1,0 +1,13 @@
+The following CSS code snippet demonstrates an uncommon bug related to the `calc()` function and percentage values:
+
+```css
+.container {
+  width: 50%;
+}
+
+.element {
+  width: calc(50% + 10px);
+}
+```
+
+In this example, the `.element`'s width is calculated as 50% of its parent's width plus 10px.  However, this calculation might lead to unexpected results if the parent's width itself is calculated using percentages or other dynamic values.  The `calc()` function might not behave as expected due to the order of operations and how percentages are resolved in the context of nested elements.
